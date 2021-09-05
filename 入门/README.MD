@@ -67,7 +67,9 @@ chromedp.UserDataDir(dir),
 ## 设置超时时间
 //TODO
 在实际应用中连续爬取多个网页，只需要每次在chromeCtx的基础上，派生一个带有超时功能的子Context即可：
+```js
 timeoutCtx, cancel := context.WithTimeout(chromeContext, 20 * time.Second)
+```
 这样就不会销毁Chrome进程再重新创建一遍了。
 
 ## 导航
