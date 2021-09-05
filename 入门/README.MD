@@ -36,8 +36,8 @@ chromedp.Run()
 
 ## 窗口大小
 ```js
-//TODO "50,400"不正确？
-chromedp.Flag("window-size", "50,400"),
+// chromedp.Flag("window-size", "50,400"), 不正确
+chromedp.WindowSize(1920, 1080)
 ```
 
 ## 设置UserAgent

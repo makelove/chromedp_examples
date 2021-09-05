@@ -26,7 +26,7 @@ func main() {
         chromedp.NoDefaultBrowserCheck,
         chromedp.Flag("headless", false),
         chromedp.Flag("ignore-certificate-errors", true),
-        chromedp.Flag("window-size", "500,400"),
+        chromedp.WindowSize(1920, 1080),
         chromedp.Flag("blink-settings", "imagesEnabled=false"),
         // chromedp.UserDataDir(dir),
     )
@@ -41,8 +41,8 @@ func main() {
 
     var nodes []*cdp.Node
     err := chromedp.Run(ctx,
-        //   chromedp.Navigate("https://www.cnblogs.com/"),
-        chromedp.Navigate("file:///Users/play/Desktop/cnblogs.com/index.html"),
+          chromedp.Navigate("https://www.cnblogs.com/"),
+        // chromedp.Navigate("file:///Users/play/Desktop/cnblogs.com/index.html"),
         chromedp.WaitVisible(`#footer`, chromedp.ByID),
         //   chromedp.Nodes(`a[@class="title"]`, &nodes),
         chromedp.Nodes(`a.post-item-title`, &nodes),
